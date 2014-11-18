@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/base-style.css" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="sitename">
+		<div class="width">
+			<h1>
+				<a href="#"> afflatus </a>
+			</h1>
+
+			<div wicket:id="menuTop"></div>
+
+			<div class="clear"></div>
+		</div>
+	</div>
+	<section id="body" class="width clear">
+		<aside id="sidebar" class="column-left">
+			<ul>
+				<li>
+					<h4>Navigate</h4>
+					<ul class="blocklist">
+						<li class="selected-item"><a href="index.html">Home</a></li>
+						<li><a href="examples.html">Examples</a></li>
+						<li><a href="#">Products</a></li>
+						<li><a href="#">Solutions</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+
+				</li>
+			</ul>
+		</aside>
+		<section id="content" class="column-right">
+			<wicket:child />
+		</section>
+
+	</section>
+
+	<footer class="clear">
+		<div class="width">
+			<p class="left">&copy; 2014 sitename.</p>
+			<p class="right">
+				<a href="http://zypopwebtemplates.com/">Free CSS Templates</a> by
+				ZyPOP
+			</p>
+		</div>
+	</footer>
+</body>
+</html>

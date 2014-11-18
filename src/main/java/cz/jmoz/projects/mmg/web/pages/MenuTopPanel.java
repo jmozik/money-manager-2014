@@ -1,0 +1,12 @@
+package cz.jmoz.projects.mmg.web.pages;
+
+import org.apache.wicket.markup.html.panel.Panel;
+
+public class MenuTopPanel extends Panel {
+	private static final long serialVersionUID = 1L;
+
+	public MenuTopPanel(String id) {
+		super(id);
+	}
+
+}
