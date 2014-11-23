@@ -212,8 +212,8 @@ nav ul li a {
     text-decoration: none;
 box-shadow:-1px 1px 0 transparent;
 }
-nav ul li.selected a,
-nav ul li.selected a:hover { 
+nav ul li a.selected,
+nav ul li a.selected:hover { 
 	color: #fff;
 	background-color: #000;
 	font-weight:bold;
