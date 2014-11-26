@@ -78,6 +78,7 @@
 			<artifactId>wicketstuff-inmethod-grid</artifactId>
 			<version>6.16.0</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>

@@ -10,6 +10,7 @@
      						http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
   
   <bean class="cz.jmoz.projects.mmg.domain.SomeClass" />   						
-     						
+  
+  <bean class="cz.jmoz.projects.mmg.app.infrastructure.ApplicationContext" />
 
 </beans>
