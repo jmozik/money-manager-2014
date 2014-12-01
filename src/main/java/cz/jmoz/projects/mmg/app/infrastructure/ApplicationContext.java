@@ -1,5 +1,8 @@
 package cz.jmoz.projects.mmg.app.infrastructure;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ApplicationContext {
   private Class activeMenuItem;
   private Class activeSubMenuItem;

@@ -76,7 +76,12 @@
 		<dependency>
 			<groupId>org.wicketstuff</groupId>
 			<artifactId>wicketstuff-inmethod-grid</artifactId>
-			<version>6.16.0</version>
+			<version>${wicket.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-spring</artifactId>
+			<version>${wicket.version}</version>
 		</dependency>
 		
 	</dependencies>
