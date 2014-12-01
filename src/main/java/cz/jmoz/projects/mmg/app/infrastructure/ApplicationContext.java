@@ -1,13 +1,20 @@
 package cz.jmoz.projects.mmg.app.infrastructure;
 
 public class ApplicationContext {
-  private Class activePage;
+  private Class activeMenuItem;
+  private Class activeSubMenuItem;
   
-  public Class getActivePage() {
-    return activePage;
+  public Class getActiveMenuItem() {
+    return activeMenuItem;
   }
-  public void setActivePage(Class activePage) {
-    this.activePage = activePage;
+  public void setActiveMenuItem(Class activeMenuItem) {
+    this.activeMenuItem = activeMenuItem;
+  }
+  public Class getActiveSubMenuItem() {
+    return activeSubMenuItem;
+  }
+  public void setActiveSubMenuItem(Class activeSubMenuItem) {
+    this.activeSubMenuItem = activeSubMenuItem;
   }
 
 }
