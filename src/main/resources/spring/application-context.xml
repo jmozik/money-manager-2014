@@ -11,8 +11,5 @@
 
 	<context:component-scan base-package="cz.jmoz.projects.mmg.app.infrastructure" />
 
-	<bean class="cz.jmoz.projects.mmg.domain.SomeClass" />
-
-	<bean class="cz.jmoz.projects.mmg.app.infrastructure.ApplicationContext" />
 
 </beans>

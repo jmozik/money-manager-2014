@@ -4,30 +4,22 @@ import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
+import cz.jmoz.projects.mmg.app.infrastructure.ApplicationContext;
 import cz.jmoz.projects.mmg.web.pages.IndexPage;
 import cz.jmoz.projects.mmg.web.pages.OverViewsPage;
 import cz.jmoz.projects.mmg.web.pages.SettingsPage;
 
 public class MenuTopPanel extends Panel {
   private static final long serialVersionUID = 1L;
-  private String activePage = "";
 
-  @Autowired
+  @SpringBean
   private ApplicationContext context;
 
   public MenuTopPanel(String id) {
     super(id);
 
-    initContent();
-  }
-
-  public MenuTopPanel(String id, PageParameters params) {
-    super(id);
-    this.activePage = params.get("activeMenu").toString();
     initContent();
   }
 
@@ -43,12 +35,12 @@ public class MenuTopPanel extends Panel {
 
       @Override
       public void onClick() {
-        
+        context.setActiveMenuItem(SettingsPage.class);
         setResponsePage(SettingsPage.class);
       }
     };
     link.add(new Label("lblLinkSettings", getString("link.label.settings")));
-    if (activePage.equals(SettingsPage.class.getSimpleName()))
+    if(context.getActiveMenuItem().equals(SettingsPage.class))
       link.add(new AttributeAppender("class", "selected"));
 
     return link;
@@ -60,14 +52,13 @@ public class MenuTopPanel extends Panel {
 
       @Override
       public void onClick() {
-        PageParameters params = new PageParameters();
-        params.add("activeMenu", OverViewsPage.class.getSimpleName());
 
-        setResponsePage(OverViewsPage.class, params);
+        context.setActiveMenuItem(OverViewsPage.class);
+        setResponsePage(OverViewsPage.class);
       }
     };
     link.add(new Label("lblLinkOverViews", getString("link.label.overViews")));
-    if (activePage.equals(OverViewsPage.class.getSimpleName()))
+    if(context.getActiveMenuItem().equals(OverViewsPage.class))
       link.add(new AttributeAppender("class", "selected"));
 
     return link;
@@ -79,14 +70,12 @@ public class MenuTopPanel extends Panel {
 
       @Override
       public void onClick() {
-        PageParameters params = new PageParameters();
-        params.add("activeMenu", IndexPage.class.getSimpleName());
-
-        setResponsePage(IndexPage.class, params);
+        context.setActiveMenuItem(IndexPage.class);
+        setResponsePage(IndexPage.class);
       }
     };
     link.add(new Label("lblLinkHome", getString("link.label.home")));
-    if (activePage.equals(IndexPage.class.getSimpleName()))
+    if(context.getActiveMenuItem().equals(IndexPage.class))
       link.add(new AttributeAppender("class", "selected"));
 
     return link;
